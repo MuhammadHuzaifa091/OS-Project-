@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scheduling Algorithms Project</h1>
+        <form id="inputForm">
+            <label for="algorithm">Select Algorithm:</label>
+            <select id="algorithm" name="algorithm">
+                <option value="fcfs">First Come First Serve (FCFS)</option>
+                <option value="sjf">Shortest Job First (SJF)</option>
+                <option value="priority">Priority</option>
+                <option value="roundRobin">Round Robin</option>
+            </select>
+
+            <label for="preemptive">Preemptive or Non-Preemptive:</label>
+            <select id="preemptive" name="preemptive">
+                <option value="non-preemptive">Non-Preemptive</option>
+                <option value="preemptive">Preemptive</option>
+            </select>
+
+            <label for="numProcesses">Number of Processes:</label>
+            <input type="number" id="numProcesses" name="numProcesses" min="1" required>
+
+            <div id="processesInput">
+                <!-- Dynamic process inputs will be added here -->
+            </div>
+
+            <button type="submit">Run Algorithm</button>
+        </form>
+
+        <div id="results">
+            <canvas id="ganttChart"></canvas>
+            <div id="metrics">
+                <table id="metricsTable">
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Completion Time</th>
+                            <th>Waiting Time</th>
+                            <th>Turnaround Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Metrics will be added here -->
+                    </tbody>
+                </table>
+                <p>Average Waiting Time: <span id="avgWaitingTime"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
